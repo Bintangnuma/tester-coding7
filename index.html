@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cyber Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Consolas, monospace;
+    }
+    
+    body {
+      background: black;
+      color: #00ffcc;
+      overflow-x: hidden;
+    }
+    
+    .grid {
+      position: fixed;
+      inset: 0;
+      background:
+      linear-gradient(#00ffcc22 1px, transparent 1px),
+      linear-gradient(90deg, #00ffcc22 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -2;
+    }
+    
+    .scanline {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      pointer-events: none;
+      z-index: 10;
+    }
+  
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hero p {
+      opacity: 0.7;
+    }
+    
+    .glitch {
+      font-size: 4em;
+      position: relative;
+    }
+    
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+    }
+    
+    .glitch::before {
+      color: cyan;
+      animation: glitch 2s infinite;
+    }
+    
+    .glitch::after {
+      color: magenta;
+      animation: glitch 1.5s infinite reverse;
+    }
+    
+    @keyframes glitch {
+      0% { clip-path: inset(0 0 80% 0); transform: translate(-2px, -2px); }
+      50% { clip-path: inset(40% 0 20% 0); transform: translate(2px, 2px); }
+      100% { clip-path: inset(80% 0 0 0); transform: translate(0); }
+    }
+    
+    .panel {
+      width: 80%;
+      margin: 80px auto;
+      padding: 30px;
+      border: 1px solid #00ffcc;
+      background: rgba(0,255,204,0.03);
+    }
+    
+    .panel h2 {
+      margin-bottom: 15px;
+      color: cyan;
+    }
+    
+    .skill {
+      margin: 10px 0;
+    }
+    
+    .skill span {
+      color: #00ffcc;
+    }
+    
+    .project {
+      padding: 10px 0;
+      border-bottom: 1px dashed #00ffcc55;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 40px;
+      opacity: 0.5;
+    }
+
+  </style>
+  
+</head>
+<body>
+  <div class="scanline"></div>
+  <div class="grid"></div>
+  
+  <section class="hero">
+    <h1 class="glitch" data-text="CYBER DEV">CYBER DEV</h1>
+    <p>> Student • Hacker Vibes • Future Engineer</p>
+  </section>
+  
+  <section class="panel">
+    <h2>ABOUT_ME.exe</h2>
+    <p>
+      I build systems, interfaces, and logic.<br>
+      Not just coding — understanding how things break and work.
+    </p>
+  </section>
+  
+  <section class="panel">
+    <h2>SKILLS.sys</h2>
+  
+    <div class="skill">HTML <span>█████████░</span></div>
+    <div class="skill">CSS  <span>████████░░</span></div>
+    <div class="skill">Python <span>███████░░░</span></div>
+    <div class="skill">JavaScript <span>██████░░░░</span></div>
+  </section>
+  
+  <section class="panel">
+    <h2>PROJECTS.log</h2>
+  
+    <div class="project">[+] Calculator System</div>
+    <div class="project">[+] Mini Game Engine</div>
+    <div class="project">[+] Cyber Portfolio</div>
+  </section>
+  
+  <section class="panel">
+    <h2>TIMELINE.dat</h2>
+    <p>2024 → Start Coding</p>
+    <p>2025 → Build Real Projects</p>
+    <p>Future → Full Stack / Security</p>
+  </section>
+  
+  <footer>
+    <p>© 2025 | SYSTEM ONLINE</p>
+  </footer>
+</body>
+</html>
